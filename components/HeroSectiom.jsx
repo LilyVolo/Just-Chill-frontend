@@ -5,7 +5,7 @@ import "../src/App.css"
 
 function HeroSection () {
     return (
-        <div className="herp=container">
+        <div className="hero-container">
            <img  className="imgHero" src="monah.jpg" alt="" />
             <p>Its time to stop running and relax</p>
             <div className="hero-btn">
