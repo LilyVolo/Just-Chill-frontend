@@ -7,7 +7,7 @@ function HeroSection () {
     return (
         <div className="hero-container">
            <img  className="imgHero" src="monah.jpg" alt="" />
-            <p>Its time to stop running and relax</p>
+            <p>Its time to stop running <br/> and relax</p>
             <div className="hero-btn">
             <Button
           className='btns'

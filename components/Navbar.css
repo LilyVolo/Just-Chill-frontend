@@ -34,7 +34,9 @@
     margin-left: 0.5rem;
     font-size: 1.8rem;
   }
-  
+ .menu-icon{
+  color: white;
+ }
   .nav-menu {
     display: grid;
     grid-template-columns: repeat(4, auto);

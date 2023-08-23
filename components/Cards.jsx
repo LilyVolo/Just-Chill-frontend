@@ -17,7 +17,7 @@ function Cards() {
             />
             <CardItem
               src='peterburg.jpg'
-              text='Weekend in the cultural capital of Russia, a city famous for its white nights, small bars and streets described by Dostoevsky'
+              text='Cultural capital of Russia, a city famous for its white nights and small bars.'
               label='Saint Peterburg'
               path='/services'
             />
@@ -31,7 +31,7 @@ function Cards() {
             />
             <CardItem
               src='2.jpg'
-              text='Take a relaxing aroma or scandinavian bath. Also you can try our new option - cedar barrel'
+              text='Take a relaxing aroma or scandinavian bath.'
               label='aroma bath'
               path='/products'
             />

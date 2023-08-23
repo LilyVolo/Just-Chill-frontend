@@ -5,7 +5,8 @@ import Cards from '../components/Cards';
 
 function HomePage() {
 return (
-    <><div> <HeroSection/></div>
+    <>
+     <HeroSection/>
      
       <Cards/>
     </>
