@@ -15,7 +15,7 @@ function HeroSection () {
           buttonSize='btn--large'
           onClick={console.log('hey')}
         >
-          to know more
+          know more
         </Button>
             </div>
         </div>
