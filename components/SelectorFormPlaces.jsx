@@ -12,7 +12,7 @@ const options = [
   
 
   return (
-    <div className="Selector">
+    <div className="selector">
       <Select
       name={'place'}
         defaultValue={selectedOption}

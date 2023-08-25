@@ -1,6 +1,52 @@
 .city-up-container{
     display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 90%;
+    margin: 0 auto;
+   background-color: aquamarine;
+}
+.city-container-wrapper {
+    display: flex;
+  background-color: blueviolet;
+    position: relative;
+    margin: 3rem 0 3rem;
+    display: flex;
+    gap: 4rem;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+
 }
 .city-first-img{
-width: 20rem;
+width: 40rem;
+border-radius: 10px;
+}
+.text-up-city{
+text-align:justify;
+margin-right: 1rem;
+font-size: 1.2rem;
+}
+.form-container{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 90%;
+     margin: 0 auto;
+    background-color: rgb(29, 43, 200);
+}
+.form-wrapper{
+    background-color: rgb(156, 226, 43);
+      position: relative;
+      margin: 3rem 0 3rem;
+      display: flex;
+      gap: 2rem;
+      justify-content:center;
+      align-items: center;
+      padding-left: 2rem;
+      padding-right: 2rem;
+      width: 40%;
+}
+.selector {
+width: 50%;
 }

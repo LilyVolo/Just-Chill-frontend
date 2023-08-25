@@ -3,7 +3,7 @@ import InfoBlocup from '../components/InfoBlockup'
 import axios from "axios"
 import { useParams } from "react-router-dom"
 import { useEffect, useState } from "react"
-const API_URL = 'http://localhost:5005/api/'
+const API_URL = 'http://localhost:5005/api'
 import Select from 'react-select';
 import SelectorFormPlaces from '../components/SelectorFormPlaces'
 import "./CityPage.css"
@@ -33,9 +33,9 @@ function CityPlanPage() {
       console.log(formData.get('place'))
       const selectedOption = formData.get('place')
       try {
-        const response = await axios.get(`${API_URL}/cities/${id}/place/${selectedOption}`);
+        const response = await axios.get(`${API_URL}/cities/${id}/places?option1=${selectedOption}`);
       setPlan(response.data)  
-        console.log(selectedOption )
+        console.log(response.data)
     }
     catch (error) {
       console.log(error);
@@ -52,18 +52,30 @@ function CityPlanPage() {
     
 		
         <div className="city-up-container" > 
+        <div className="city-container-wrapper">
+
+       <div> 
           <img  className="city-first-img" src={'../public/'+city.img2} alt="" />
-          <div>
-            <p>
+       </div>
+
+          <div className='text-up-city'> <p>
               {city.text}
-            </p>
-          </div>
-      
+               </p>  </div>
+         
+          </div>   
 </div>
-      <form action="" onSubmit={handleSubmit}>
+
+<div className='form-container'>
+
+      <form action="" onSubmit={handleSubmit} className='form-wrapper'>
         <SelectorFormPlaces/>
         <button> Submit </button>
       </form>
+
+</div>
+
+
+
     </div>
   )
 }
