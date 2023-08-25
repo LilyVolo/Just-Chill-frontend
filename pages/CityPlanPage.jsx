@@ -8,10 +8,23 @@ import Select from 'react-select';
 import SelectorFormPlaces from '../components/SelectorFormPlaces'
 import "./CityPage.css"
 
+
 function CityPlanPage() {
+
+
   const {id} = useParams();
   const [city, setCity] = useState(null);
   const [plan, setPlan] = useState(null);
+
+  const options1 = [
+    { value: 'solo thai massage', label: 'solo thai massage' },
+    { value: 'duo thai massage', label: 'duo thai massage' },
+    { value: 'hands massage', label: 'hands massage' },
+    { value: 'feet massage', label: 'feet massage' },
+    
+    { value: 'medical massage', label: 'medical massage' },
+    { value: 'tantra exprience', label: 'tantra exprience' },
+  ];
   
     async function fetchTargetCity() {
     try {
@@ -54,7 +67,7 @@ function CityPlanPage() {
         <div className="city-up-container" > 
         <div className="city-container-wrapper">
 
-       <div> 
+       <div className='img-city-container'> 
           <img  className="city-first-img" src={'../public/'+city.img2} alt="" />
        </div>
 
@@ -68,7 +81,12 @@ function CityPlanPage() {
 <div className='form-container'>
 
       <form action="" onSubmit={handleSubmit} className='form-wrapper'>
-        <SelectorFormPlaces/>
+        <SelectorFormPlaces
+        options={options1}
+        />
+          <SelectorFormPlaces
+        options={options1}
+        />
         <button> Submit </button>
       </form>
 

@@ -1,13 +1,9 @@
 import React, { useState } from 'react';
 import Select from 'react-select';
 
-const options = [
-    { value: 'solo thai massage', label: 'solo thai massage' },
-    { value: 'medical massage', label: 'medical massage' },
-    { value: 'tantra exprience', label: 'tantra exprience' },
-  ];
 
-  export default function SelectorFormPlaces() {
+
+  export default function SelectorFormPlaces(props) {
     const [selectedOption, setSelectedOption] = useState(null);
   
 
@@ -17,7 +13,7 @@ const options = [
       name={'place'}
         defaultValue={selectedOption}
         onChange={setSelectedOption}
-        options={options}
+        options={props.options}
       />
     </div>
   );
