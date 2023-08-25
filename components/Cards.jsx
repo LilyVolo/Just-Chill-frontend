@@ -1,26 +1,53 @@
 import React from 'react';
 import './Cards.css';
+const API_URL = 'http://localhost:5005/api/'
 import CardItem from './CardItem';
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 function Cards() {
+  const [cities, setCities] = useState([]);
+  async function fetchAllCities() {
+    try {
+      const response = await axios.get(`${API_URL}/cities`);
+
+		
+      setCities(response.data);
+      console.log(response.data)
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  useEffect(() => {
+    fetchAllCities();
+  }, []);
+
+  if (!cities) {
+    return <div className="Loading"> Loading..</div>;
+  }
+
+
   return (
     <div className='cards'>
       <h1>Check out these Destinations</h1>
       <div className='cards__container'>
         <div className='cards__wrapper'>
           <ul className='cards__items'>
-            <CardItem
-              src='paris.jpg'
-              text='City of contrasts, romantic medieval streets side by side with modern entertainment'
-              label='Paris'
-              path='/services'
-            />
-            <CardItem
-              src='peterburg.jpg'
-              text='Cultural capital of Russia, a city famous for its white nights and small bars.'
-              label='Saint Peterburg'
-              path='/services'
-            />
+            {cities.map((city) => {
+              return (
+                <CardItem
+                key={city._id}
+                src={city.img}
+                text= {city.description}
+                label={city.label}
+                path={'/city/'+city._id}
+              />
+              )
+            }
+            )}
+      
+      
           </ul>
           <ul className='cards__items'>
             <CardItem

@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import './App.css'
 import { Routes, Route, useNavigate } from "react-router-dom";
-
-import CityPage from "../pages/CityPage"
+// import 'dotenv/config'
+import CityPlanPage from '../pages/CityPlanPage';
 import Layout from "../components/Layout";
 import HomePage from '../pages/HomePage';
 
@@ -15,8 +15,8 @@ function App() {
 				
 				<Route element={<Layout />}>
         <Route path="/" element={<HomePage />} />
-				<Route path="city/:id" element={<CityPage/>} />
-			
+				<Route path="city/:id" element= {<CityPlanPage/>} />
+
 				</Route>
 			</Routes>
   </div>
