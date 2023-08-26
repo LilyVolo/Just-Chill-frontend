@@ -65,7 +65,37 @@ position: relative;
 width: 50%;
 }
 
+
+
+
 @media (max-width: 1700px) {
+    .city-container-wrapper {
+    width: 100%;
+        background-color: brown;
+        padding-top: 2rem;
+    }
+    .text-up-city{
+        margin: 2rem;
+    }
+    .text-up-city{
+        margin: 1rem;
+        font-size: 1rem;
+        width:90%;
+    }
+    .img-city-container {
+width: 100%;
+    }
+    .city-first-img{
+        width: 100%;
+    }
+    .form-wrapper{
+        width: 100%;
+    }
+    .selector{
+        width: 50%;
+    }
+}
+@media (max-width: 1024px) {
     .city-container-wrapper {
         flex-direction: column;
         background-color: brown;

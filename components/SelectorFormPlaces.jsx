@@ -10,7 +10,7 @@ import Select from 'react-select';
   return (
     <div className="selector">
       <Select
-      name={'place'}
+      name={props.name}
         defaultValue={selectedOption}
         onChange={setSelectedOption}
         options={props.options}

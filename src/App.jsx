@@ -1,10 +1,11 @@
 import { useState } from 'react'
 import './App.css'
-import { Routes, Route, useNavigate } from "react-router-dom";
-// import 'dotenv/config'
+import { Routes, Route} from "react-router-dom";
 import CityPlanPage from '../pages/CityPlanPage';
+import PlanResultPage from '../pages/PlanResultPage';
 import Layout from "../components/Layout";
 import HomePage from '../pages/HomePage';
+
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
 				<Route element={<Layout />}>
         <Route path="/" element={<HomePage />} />
 				<Route path="city/:id" element= {<CityPlanPage/>} />
+        <Route path="plan" element= {<PlanResultPage/>} />
 
 				</Route>
 			</Routes>
