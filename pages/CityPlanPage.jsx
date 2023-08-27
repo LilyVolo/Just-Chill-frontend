@@ -7,6 +7,7 @@ const API_URL = 'http://localhost:5005/api'
 import Select from 'react-select';
 import SelectorFormPlaces from '../components/SelectorFormPlaces'
 import "./CityPage.css"
+import { Button} from "../components/Button.jsx"
 
 
 function CityPlanPage() {
@@ -19,27 +20,15 @@ function CityPlanPage() {
 
 
 
-  const options1 = [
-    { value: 'solo thai massage', label: 'solo thai massage' },
-    { value: 'duo thai massage', label: 'duo thai massage' },
-    { value: 'hands massage', label: 'hands massage' },
-    { value: 'feet massage', label: 'feet massage' },
-    { value: 'anti-stress massage', label: 'anti-stress massage' },
-    { value: 'massage for pregnant', label: 'massage for pregnant' },
-    { value: 'medical massage', label: 'medical massage' },
-    { value: 'tantra exprience', label: 'tantra exprience' },
-    { value: 'oil massage', label: ' oil massage' },
-    { value: 'massage with plantes', label: 'massage with plantes' },
-    { value: ' shamanic sacred rituals', label: 'shamanic sacred rituals' },
-   
-  ];
-
   const options3 = [
     { value: 'french', label: 'french' },
-    { value: 'italian', label: 'italian' }]
+    { value: 'italian', label: 'italian' },
+    { value: 'russian', label: 'russian' }]
 
-    const options4 = [
+  const options4 = [
       { value: '1', label: '1' },
+      { value: '2', label: '2' },
+      { value: '3', label: '3' },
       { value: '4', label: '4' }]
 
 
@@ -47,42 +36,41 @@ function CityPlanPage() {
     try {
       const response = await axios.get(`${API_URL}/cities/${id}`);
       setCity(response.data);
-      console.log(response.data)
     } catch (error) {
       console.log(error);
     } }
+    
 
-    async function fetchRestaurant(selectedOption3, selectedOption4) {
-      // Replace 'YOUR_API_KEY' with your actual Google Places API key
-      const apiKey = import.meta.env.VITE_GAPI_KEY;
-      //const location = { lat: 37.7749, lng: -122.4194 }; // Example location (San Francisco)
-      //const radius = 5000; // Radius in meters
+    async function fetchRestaurant(selectedOption3, selectedOption4 ) {
+      const apiUrl    = '/gapi/maps/api/place/textsearch/json';
+      const cityName  = city.label;
+      const query     = `restaurant ${selectedOption3} à ${cityName}`;
 
-      // Perform a nearby search
-      //const apiUrl = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${location.lat},${location.lng}&radius=${radius}&key=${apiKey}`;
-      const apiUrl2= `https://maps.googleapis.com/maps/api/place/textsearch/json?query=restaurant%20${selectedOption3}%20%C3%A0%20paris&radius=10000&maxprice=${selectedOption4}&key=`+apiKey;
-      const restaurant = await axios.get(apiUrl2, {
-            headers: {
-              'Access-Control-Allow-Origin': '*', // Allow requests from any origin
-            },
-          })
+      const restaurant = await axios.get(apiUrl, {
+            params: {
+              query,
+              radius: 10000,
+              maxprice: selectedOption4,
+              key: import.meta.env.VITE_GAPI_KEY
+            }
+          }).catch(error => {
+            console.error('Error fetching data:', error);
+          });
+
+
       return restaurant.data.results.filter(result => {
         // Filter based on budget and review criteria
-        // You'll need to define your own logic here based on available data
-        const meetsBudgetCriteria = result.price_level && result.price_level <= 2; // Example: Budget is low to moderate
-        const meetsReviewCriteria = result.rating && result.rating >= 4.0; // Example: Minimum review rating
-
+        const meetsBudgetCriteria = result.price_level && result.price_level <= selectedOption4; // Example: Budget is low to moderate
+        const meetsReviewCriteria = result.rating && result.rating >= 4.0; 
         return meetsBudgetCriteria && meetsReviewCriteria;
       })
-  .catch(error => {
-    console.error('Error fetching data:', error);
-  });
+  
     }
 
     useEffect(() => {
       fetchTargetCity();
-      //console.log()
     }, [id]);
+
 
     async function handleSubmit (event) {
       event.preventDefault()
@@ -98,10 +86,11 @@ function CityPlanPage() {
       try {
       const response = await axios.get(`${API_URL}/cities/${id}/places?option1=${selectedOption}&option2=${selectedOption2}`);
       setPlan(response.data)  
-      const restaurant = fetchRestaurant(selectedOption3, selectedOption4)
-      let kaka = [...response, restaurant]
-      console.log(response.data)
-      navigate('plan', {state: kaka})
+      const restaurant =  await fetchRestaurant(selectedOption3, selectedOption4)
+      let allplanData = [...response.data, restaurant]
+      navigate('/plan', {state: allplanData})
+
+      console.log(allplanData, '27/08 check')
     }
     catch (error) {
       console.log(error);
@@ -113,15 +102,12 @@ function CityPlanPage() {
       return <div className="Loading"> Loading..</div>;
     }
   return (
-  <div>
-      
-    
-		
+  <div className='main-city-page-cintainer'>
         <div className="city-up-container" > 
         <div className="city-container-wrapper">
 
        <div className='img-city-container'> 
-          <img  className="city-first-img" src={'../public/'+city.img2} alt="" />
+          <img  className="city-first-img" src={`../public/paris/${city.img1}`} alt="" />
        </div>
 
           <div className='text-up-city'> <p>
@@ -132,27 +118,58 @@ function CityPlanPage() {
 </div>
 
 <div className='form-container'>
+<form action="" onSubmit={handleSubmit} className='form-wrapper'>
 
-      <form action="" onSubmit={handleSubmit} className='form-wrapper'>
-        <SelectorFormPlaces
+    <div className='firs-block block'>
+    <SelectorFormPlaces
          name={'massage'}
-        options={options1}
+         options={city.massage.map((el) => {
+          return( {value: el, label: el})
+        })}
         />
-          <SelectorFormPlaces
+           <img className="img_places" src={`../public/paris/${city.img2}`}  alt="" />
+           {console.log(`../public/paris/${city.img2}`)}
+    </div>
+
+    <div className='second-block block'>
+    <img className="img_places" src={`../public/paris/${city.img3}`} alt="" />
+    
+    <SelectorFormPlaces
           name={'degustation'}
         options={city.degustation.map((el) => {
           return( {value: el, label: el})
         })}
         />
-          <SelectorFormPlaces
-         name={'cuisine'}
-        options={options3}
-        />
-          <SelectorFormPlaces
+      </div>
+      <div className='third-block block'>
+     
+      <div className='smallSelectorBox'>
+      <SelectorFormPlaces id="selecta"
          name={'budget'}
         options={options4}
         />
-        <button> Submit </button>
+
+      <SelectorFormPlaces 
+         name={'cuisine'}
+        options={options3}
+        />
+    
+   
+      </div>
+        
+        <img className='paris4 img_places' src={`../public/paris/${city.img4}`} alt="" />
+        </div>
+       
+     <button>
+      Submit
+     </button>
+        {/* <Button
+          className='btns'
+          buttonStyle='btn--primary'
+          buttonSize='btn--large'
+        >
+          Submit
+        </Button> */}
       </form>
 
 </div>
