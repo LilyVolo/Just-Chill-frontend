@@ -5,7 +5,9 @@ import CityPlanPage from '../pages/CityPlanPage';
 import PlanResultPage from '../pages/PlanResultPage';
 import Layout from "../components/Layout";
 import HomePage from '../pages/HomePage';
-
+import SavedPlansPage from "../pages/SavedPlansPage"
+import SignupPage from '../pages/SignupPage'
+import LogInPage from '../pages/LogInPage'
 
 function App() {
 
@@ -18,6 +20,9 @@ function App() {
         <Route path="/" element={<HomePage />} />
 				<Route path="city/:id" element= {<CityPlanPage/>} />
         <Route path="plan" element= {<PlanResultPage/>} />
+        <Route path='saved' element={<SavedPlansPage/>}> </Route>
+        <Route path='signup' element={<SignupPage/>}> </Route>
+        <Route path='/login' element={<LogInPage/>}> </Route>
 
 				</Route>
 			</Routes>

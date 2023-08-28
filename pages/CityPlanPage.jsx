@@ -143,7 +143,7 @@ function CityPlanPage() {
       </div>
       <div className='third-block block'>
      
-      <div className='smallSelectorBox'>
+      
       <SelectorFormPlaces id="selecta"
          name={'budget'}
         options={options4}
@@ -155,7 +155,7 @@ function CityPlanPage() {
         />
     
    
-      </div>
+
         
         <img className='paris4 img_places' src={`../public/paris/${city.img4}`} alt="" />
         </div>

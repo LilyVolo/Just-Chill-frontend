@@ -30,13 +30,17 @@ console.log(data[2][0], 'kakaka')
   <div  className='block-plan'>
     <p>We propose you this 2 placese on your choise</p>
     <p>{data[2][0].name}</p>
-    <img src={`../public/${data[2].img}`} alt="" />
+    <img src='../public/fork.jpg' alt="" />
     <p> rating of the place: {data[2][0].rating} </p>
     <p>adress: {data[2][0].formatted_address}</p>
     <div> {data[2][0].icon} </div>
     <p>We will organise transfer, and degustation will be prepeared acoording to our planing</p>
   </div>
+  <button>
+    save your plan
+  </button>
     </div>
+    
   )
 }
 
