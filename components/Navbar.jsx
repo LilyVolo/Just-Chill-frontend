@@ -78,21 +78,6 @@ function Navbar() {
 
 
 
-
-
- 
-      {!isLoggedIn && (
-        <>
-          <Link to="/signup"> <button>Sign Up</button> </Link>
-          <Link to="/login"> <button>Login</button> </Link>
-        </>
-      )}  
-
-
-
-
-
-
   
  </ul>
  {button && <Button buttonStyle='btn--outline'>Sign up</Button>}
