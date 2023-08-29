@@ -5,7 +5,7 @@ import  {ImCross} from "react-icons/im"
 import './Navbar.css'
 import { Button} from "./Button.jsx"
 import { useContext } from "react";                  
-import { AuthContext } from "../src/context/auth.context"; 
+import { AuthContext } from "../context/auth.context"; 
  
 
 function Navbar() {

@@ -1,6 +1,4 @@
 .main-city-page-cintainer{
-background-color: pink;
-opacity: 0.9;
 z-index: -5;
 }
 .city-up-container{
@@ -9,11 +7,9 @@ z-index: -5;
    align-items: center;
    width: 90%;
     margin: 0 auto;
-   background-color: aquamarine;
 }
 .city-container-wrapper {
     display: flex;
-    background-color: blueviolet;
     position: relative;
     margin: 3rem 0 3rem;
     display: flex;
@@ -90,7 +86,6 @@ z-index: 3;
 }
 
 .smallSelectorBox{
-    /* background-color: aqua; */
     height: 30rem;
     width: 23rem;
     display: flex;
@@ -146,7 +141,6 @@ width: 100%;
     }
     .smallSelectorBox{
         width:20rem;
-        background-color: blue;
     }
   
     .selector {
@@ -158,7 +152,6 @@ width: 100%;
         }
     .city-container-wrapper {
         width: 100%;
-        background-color: rgb(124, 165, 42);
         padding-top: 2rem;
             }
 .block{

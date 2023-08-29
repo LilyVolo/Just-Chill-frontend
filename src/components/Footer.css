@@ -101,17 +101,17 @@
   }
   
   .social-media {
-    max-width: 1000px;
+    /* max-width: 1000px; */
     width: 100%;
   }
   
   .social-media-wrap {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    width: 90%;
+    align-items:baseline;
+    width: 95%;
     max-width: 1000px;
-    margin: 40px auto 0 auto;
+    margin: 0px auto 0 auto;
   }
   
   .social-icons {

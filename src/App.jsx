@@ -1,13 +1,13 @@
 import { useState } from 'react'
 import './App.css'
 import { Routes, Route} from "react-router-dom";
-import CityPlanPage from '../pages/CityPlanPage';
-import PlanResultPage from '../pages/PlanResultPage';
-import Layout from "../components/Layout";
-import HomePage from '../pages/HomePage';
-import SavedPlansPage from "../pages/SavedPlansPage"
-import SignupPage from '../pages/SignupPage'
-import LogInPage from '../pages/LogInPage'
+import CityPlanPage from './pages/CityPlanPage';
+import PlanResultPage from './pages/PlanResultPage';
+import Layout from "./components/Layout";
+import HomePage from './pages/HomePage';
+import SavedPlansPage from "./pages/SavedPlansPage"
+import SignupPage from './pages/SignupPage'
+import LogInPage from './pages/LogInPage'
 
 function App() {
 

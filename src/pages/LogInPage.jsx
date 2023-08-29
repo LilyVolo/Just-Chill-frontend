@@ -3,7 +3,7 @@ import { useState, useContext} from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 const API_URL = import.meta.env.VITE_API_URL;
-import { AuthContext } from "../src/context/auth.context"
+import { AuthContext } from "../context/auth.context"
 
 function LogInPage() {
     const [email, setEmail] = useState("");

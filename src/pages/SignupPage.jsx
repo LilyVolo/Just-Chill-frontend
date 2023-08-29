@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 const API_URL = import.meta.env.VITE_API_URL;
-
+import "./SignupPage.css"
 
 
 
@@ -38,10 +38,14 @@ function SignupPage() {
     }
 
     return (
-      <div className="SignupPage">
+      <div className="signupPage">
+        <div className='containerSignup'>
+
+
+      
         <h1>Sign Up</h1>
    
-        <form onSubmit={handleSignupSubmit}>
+        <form className='subscrForm' onSubmit={handleSignupSubmit}>
           <label>Email:</label>
           <input 
             type="email"
@@ -71,9 +75,14 @@ function SignupPage() {
    
         { errorMessage && <p className="error-message">{errorMessage}</p> }
    
-        <p>Already have account?</p>
+        <div>
+        <p className='textLogin'>Already have account?</p>
         <Link to={"/login"}> Login</Link>
+        </div>
+        {/* <img className='backgraoundSignUp' src="../public/signup.jpg" alt="" /> */}
+        </div>
       </div>
+
     )
 }
 

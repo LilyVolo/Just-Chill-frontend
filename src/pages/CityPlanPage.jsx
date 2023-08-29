@@ -107,7 +107,7 @@ function CityPlanPage() {
         <div className="city-container-wrapper">
 
        <div className='img-city-container'> 
-          <img  className="city-first-img" src={`../public/paris/${city.img1}`} alt="" />
+          <img  className="city-first-img" src={`/paris/${city.img1}`} alt="" />
        </div>
 
           <div className='text-up-city'> <p>
