@@ -4,6 +4,7 @@ import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 const API_URL = import.meta.env.VITE_API_URL;
 import { AuthContext } from "../context/auth.context"
+import './LoginPage.css'
 
 function LogInPage() {
     const [email, setEmail] = useState("");
@@ -39,32 +40,37 @@ function LogInPage() {
     };    
     
     return (
-      <div className="LoginPage">
+      <div className="loginPage">
+
+        <div className='containerLogin'>
         <h1>Login</h1>
    
-        <form onSubmit={handleLoginSubmit}>
-          <label>Email:</label>
-          <input 
-            type="email"
-            name="email"
-            value={email}
-            onChange={handleEmail}
-          />
-   
-          <label>Password:</label>
-          <input
-            type="password"
-            name="password"
-            value={password}
-            onChange={handlePassword}
-          />
-   
-          <button type="submit">Login</button>
-        </form>
-        { errorMessage && <p className="error-message">{errorMessage}</p> }
-   
-        <p>Don't have an account yet?</p>
-        <Link to={"/signup"}> Sign Up</Link>
+   <form className='loginForm' onSubmit={handleLoginSubmit}>
+     <label>Email:</label>
+     <input 
+       type="email"
+       name="email"
+       value={email}
+       onChange={handleEmail}
+     />
+
+     <label>Password:</label>
+     <input
+       type="password"
+       name="password"
+       value={password}
+       onChange={handlePassword}
+     />
+
+     <button type="submit">Login</button>
+   </form>
+   { errorMessage && <p className="error-message">{errorMessage}</p> }
+
+   <p>Don't have an account yet?</p>
+   <Link to={"/signup"}> Sign Up</Link>
+
+        </div>
+        
       </div>
     )
 }

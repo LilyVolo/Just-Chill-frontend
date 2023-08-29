@@ -1,44 +1,56 @@
 import React from 'react'
 import { useLocation } from 'react-router-dom';
 import './PlanResultPage.css'
-
-
+import service from '../service/service';
 function PlanResultPage() {
     const location = useLocation();
-const data = location.state;
-console.log(data, 'new page')
-console.log(data[2][0], 'kakaka')
+    const data = location.state;
+    console.log(data, 'new page')
+
+ 
+
+   function handleClick () {
+    service.post(`plans/savedplans`, {city: data.city, restaurants: data.restaurants,
+      places:data.infos, 
+    }).then(() => {
+      
+     })
+    
+   }
+
+
   return (
     <div>
-  <div>
+   <div>
     <p>This is plan of your relaxing day:</p>
   </div>
   <div className='block-plan'>
-    <p>We propose you to visit {data[0][0].name} to make yor body relaxed:</p>
-    <img className='img' src="../public/place.jpg" alt="" />
-    <p> rating of the place: {data[0][0].rating} </p>
-    <p>adress: {data[0][0].formatted_address}</p>
+    <p>We propose you to visit {data.infos[0][0].name} to make yor body relaxed:</p>
+    <img className='img' src="/place.jpg" alt="" />
+    <p> rating of the place: {data.infos[0][0].rating} </p>
+    <p>adress: {data.infos[0][0].formatted_address}</p>
     <p>We will book it for you, and propose extra options</p>
   </div>
-  <div  className='block-plan'>
-    <p>According to your choise we recomende you {data[1][0].name}</p>
-    <img src={`../public/${data[1][0].img}`} alt="" />
-    <p> rating of the place: {data[1][0].rating} </p>
-    <p>adress: {data[1][0].formatted_address}</p>
+ <div  className='block-plan'>
+    <p>According to your choise we recomende you {data.infos[1][0].name}</p>
+    <img src={`../public/${data.infos[1][0].img}`} alt="" />
+    <p> rating of the place: {data.infos[1][0].rating} </p>
+    <p>adress: {data.infos[1][0].formatted_address}</p>
     <p>We will organise transfer, and degustation will be prepeared acoording to our planing</p>
   </div>
   <div  className='block-plan'>
     <p>We propose you this 2 placese on your choise</p>
-    <p>{data[2][0].name}</p>
+    <p>{data.restaurants[0].name}</p>
     <img src='../public/fork.jpg' alt="" />
-    <p> rating of the place: {data[2][0].rating} </p>
-    <p>adress: {data[2][0].formatted_address}</p>
-    <div> {data[2][0].icon} </div>
+    <p> rating of the place: {data.restaurants[0].rating} </p>
+    <p>adress: {data.restaurants[0].formatted_address}</p>
+   
     <p>We will organise transfer, and degustation will be prepeared acoording to our planing</p>
   </div>
-  <button>
+  <button onClick={handleClick}> 
     save your plan
-  </button>
+  </button> 
+ 
     </div>
     
   )

@@ -10,7 +10,7 @@ import "./CityPage.css"
 import { Button} from "../components/Button.jsx"
 
 
-function CityPlanPage() {
+function CityPage() {
 
 
   const {id} = useParams();
@@ -87,10 +87,9 @@ function CityPlanPage() {
       const response = await axios.get(`${API_URL}/cities/${id}/places?option1=${selectedOption}&option2=${selectedOption2}`);
       setPlan(response.data)  
       const restaurant =  await fetchRestaurant(selectedOption3, selectedOption4)
-      let allplanData = [...response.data, restaurant]
+      let allplanData = {infos: response.data, restaurants: restaurant || [], city: id}
       navigate('/plan', {state: allplanData})
 
-      console.log(allplanData, '27/08 check')
     }
     catch (error) {
       console.log(error);
@@ -180,4 +179,4 @@ function CityPlanPage() {
   )
 }
 
-export default CityPlanPage
+export default CityPage
