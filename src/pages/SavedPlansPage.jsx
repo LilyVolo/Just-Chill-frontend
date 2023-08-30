@@ -36,11 +36,11 @@ console.log(plans)
   
 
     return (
-      <div>
+      <div className='container-saved-plans'>
         {plans.map((plan) => {
           // const {plan} = plan; // Обратите внимание на исправленные деструктуризации
           return (
-            <div key={plan._id} className="eachCard">
+            <div key={plan._id} className="each-card">
               <div className="plan-note-card">
                 <img
                   className="fplan-details"

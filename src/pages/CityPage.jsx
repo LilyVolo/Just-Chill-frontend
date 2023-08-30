@@ -152,17 +152,15 @@ function CityPage() {
             )
           })
         }
-        {/* <SwiperSlide><img className="img_places" src={`../public/1.jpg`} alt="" /></SwiperSlide>
-        <SwiperSlide><img className="img_places" src={`../public/2.jpg`} alt="" /></SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>Slide 4</SwiperSlide>
-        <SwiperSlide>Slide 5</SwiperSlide>
-        <SwiperSlide>Slide 6</SwiperSlide>
-        <SwiperSlide>Slide 7</SwiperSlide>
-        <SwiperSlide>Slide 8</SwiperSlide>
-        <SwiperSlide>Slide 9</SwiperSlide> */}
+      
       </Swiper>
          
+<div className='texxt-container'>
+  <h2>
+    {city.text}
+  </h2>
+</div>
+
 <div className='form-container'>
 
 <form action="" onSubmit={handleSubmit} className='form-wrapper'>

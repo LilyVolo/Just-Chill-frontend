@@ -46,7 +46,7 @@ function PlanResultPage() {
   <div  className='plan-block'>
     <p>We propose you this 2 placese on your choise</p>
     <p>{data.restaurants[0].name}</p>
-    <img src='../public/fork.jpg' alt="" />
+    <img src='../public/restaurant.jpg' alt="" />
     <p> rating of the place: {data.restaurants[0].rating} </p>
     <p>adress: {data.restaurants[0].formatted_address}</p>
    

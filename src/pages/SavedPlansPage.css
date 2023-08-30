@@ -1,5 +1,11 @@
-.saved-plan-block {
-    width: 20rem;
-    height: 15rem;
-    background-color: grey;
+.container-saved-plans {
+    display: flex;
+    align-items:start;
+    justify-content: left;
+    background-color: aquamarine;
+}
+.each-card{
+    background-color: bisque;
+    width:20rem;
+    margin: 2rem;
 }
