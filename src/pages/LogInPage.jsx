@@ -5,12 +5,13 @@ import { Link, useNavigate } from "react-router-dom";
 const API_URL = import.meta.env.VITE_API_URL;
 import { AuthContext } from "../context/auth.context"
 import './LoginPage.css'
+import { Button} from "../components/Button.jsx"
+
 
 function LogInPage() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [errorMessage, setErrorMessage] = useState(undefined);
-    
     const navigate = useNavigate();
 
     const { storeToken, authenticateUser } = useContext(AuthContext);   
@@ -46,7 +47,7 @@ function LogInPage() {
         <h1>Login</h1>
    
    <form className='loginForm' onSubmit={handleLoginSubmit}>
-     <label>Email:</label>
+     <label className='formElements'>Email:</label>
      <input 
        type="email"
        name="email"
@@ -54,7 +55,7 @@ function LogInPage() {
        onChange={handleEmail}
      />
 
-     <label>Password:</label>
+     <label className='formElements'>Password:</label>
      <input
        type="password"
        name="password"
@@ -62,13 +63,21 @@ function LogInPage() {
        onChange={handlePassword}
      />
 
-     <button type="submit">Login</button>
+     <button className='formElements' type="submit">Login</button>
    </form>
    { errorMessage && <p className="error-message">{errorMessage}</p> }
 
-   <p>Don't have an account yet?</p>
-   <Link to={"/signup"}> Sign Up</Link>
+   <p  className='formElements'>Don't have an account yet?</p>
 
+   <Button
+          className='btns formElements'
+          buttonStyle='btn--primary'
+          buttonSize='btn--large'
+          way='/signup'
+          onClick={console.log('hey')}
+        >
+         Sign up
+        </Button>
         </div>
         
       </div>

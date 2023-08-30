@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 const API_URL = import.meta.env.VITE_API_URL;
 import "./SignupPage.css"
-
+import { Button} from "../components/Button.jsx"
 
 
 
@@ -26,7 +26,7 @@ function SignupPage() {
         // Create an object representing the request body
         const requestBody = { email, password, name };
 
-    axios.post(`${API_URL}auth/signup`, requestBody)
+    axios.post(`${API_URL}/auth/signup`, requestBody)
       .then((response) => {
         navigate('/login');
         console.log(response)
@@ -46,7 +46,7 @@ function SignupPage() {
         <h1>Sign Up</h1>
    
         <form className='subscrForm' onSubmit={handleSignupSubmit}>
-          <label>Email:</label>
+          <label className='formElements'>Email:</label>
           <input 
             type="email"
             name="email"
@@ -54,7 +54,7 @@ function SignupPage() {
             onChange={handleEmail}
           />
    
-          <label>Password:</label>
+          <label className='formElements'>Password:</label>
           <input 
             type="password"
             name="password"
@@ -62,7 +62,7 @@ function SignupPage() {
             onChange={handlePassword}
           />
    
-          <label>Name:</label>
+          <label className='formElements'>Name:</label>
           <input 
             type="text"
             name="name"
@@ -70,16 +70,24 @@ function SignupPage() {
             onChange={handleName}
           />
    
-          <button type="submit">Sign Up</button>
+          <button className='formElements' type="submit">Sign Up</button>
         </form>
    
         { errorMessage && <p className="error-message">{errorMessage}</p> }
    
         <div>
-        <p className='textLogin'>Already have account?</p>
-        <Link to={"/login"}> Login</Link>
+        <p className='textLogin formElements'>Already have account?</p>
+     
+        <Button
+          className='btns formElements'
+          buttonStyle='btn--primary'
+          buttonSize='btn--large'
+          way='/login'
+          onClick={console.log('hey')}
+        >
+         Login
+        </Button>
         </div>
-        {/* <img className='backgraoundSignUp' src="../public/signup.jpg" alt="" /> */}
         </div>
       </div>
 

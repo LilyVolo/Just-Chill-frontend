@@ -3,7 +3,7 @@ import InfoBlocup from '../components/InfoBlockup'
 import axios from "axios"
 import { useNavigate, useParams } from "react-router-dom"
 import { useEffect, useState, useRef } from "react"
-const API_URL = 'http://localhost:5005/api'
+const API_URL = import.meta.env.VITE_API_URL;
 import Select from 'react-select';
 import SelectorFormPlaces from '../components/SelectorFormPlaces'
 import "./CityPage.css"
@@ -143,15 +143,24 @@ function CityPage() {
         modules={[Autoplay, Pagination, Navigation]}
         className="mySwiper"
       >
-        <SwiperSlide><img className="img_places" src={`../public/1.jpg`} alt="" /></SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide>
+        {
+          city.slimg.map((el) => {
+            console.log(el)
+            return (
+       
+              <SwiperSlide key={el}><img className="img_places" src={'../public/paris/'+el} alt="" /></SwiperSlide>
+            )
+          })
+        }
+        {/* <SwiperSlide><img className="img_places" src={`../public/1.jpg`} alt="" /></SwiperSlide>
+        <SwiperSlide><img className="img_places" src={`../public/2.jpg`} alt="" /></SwiperSlide>
         <SwiperSlide>Slide 3</SwiperSlide>
         <SwiperSlide>Slide 4</SwiperSlide>
         <SwiperSlide>Slide 5</SwiperSlide>
         <SwiperSlide>Slide 6</SwiperSlide>
         <SwiperSlide>Slide 7</SwiperSlide>
         <SwiperSlide>Slide 8</SwiperSlide>
-        <SwiperSlide>Slide 9</SwiperSlide>
+        <SwiperSlide>Slide 9</SwiperSlide> */}
       </Swiper>
          
 <div className='form-container'>

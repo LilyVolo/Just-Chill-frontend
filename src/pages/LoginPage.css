@@ -24,15 +24,20 @@
     text-align: center;
     margin: 1.5rem;
     color: white;
-    
+   border: 2px solid white;
+   width:30rem;
+   padding: 1rem;
   }
   .loginForm{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content:flex-end;
 
   }
   .textLogin{
     color: white;
+  }
+  .formElements{
+    margin: 1rem;
   }

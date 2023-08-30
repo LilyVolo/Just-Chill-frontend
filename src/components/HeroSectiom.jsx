@@ -10,6 +10,7 @@ function HeroSection () {
             <p>Its time to stop running <br/> and relax</p>
             <div className="hero-btn">
             <Button
+            way='/signup'
           className='btns'
           buttonStyle='btn--primary'
           buttonSize='btn--large'

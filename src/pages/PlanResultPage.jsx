@@ -1,5 +1,5 @@
 import React from 'react'
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import './PlanResultPage.css'
 import service from '../service/service';
 
@@ -8,14 +8,14 @@ function PlanResultPage() {
     const location = useLocation();
     const data = location.state;
     console.log (data, 'new page')
-
+    const navigate =  useNavigate()
  
 
    function handleClick () {
     service.post(`plans/savedplans`, {city: data.city, restaurants: data.restaurants,
       places: [data.infos[0][0], data.infos[1][0]], 
     }).then(() => {
-      
+      navigate('/saved')
      })
     
    }
@@ -53,9 +53,12 @@ function PlanResultPage() {
     <p>We will organise transfer, and degustation will be prepeared acoording to our planing</p>
   </div>
   </div>
-  <button onClick={handleClick}> 
+
+  <div>
+  <button className='button' onClick={handleClick}> 
     save your plan
   </button> 
+  </div>
   
   <>
   
