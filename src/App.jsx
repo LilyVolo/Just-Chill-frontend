@@ -8,6 +8,7 @@ import HomePage from './pages/HomePage';
 import SavedPlansPage from "./pages/SavedPlansPage"
 import SignupPage from './pages/SignupPage'
 import LogInPage from './pages/LogInPage'
+import IsPrivate from './components/IsPrivate';
 
 function App() {
 
@@ -20,9 +21,9 @@ function App() {
         <Route path="/" element={<HomePage />} />
 				<Route path="city/:id" element= {<CityPage/>} />
         <Route path="plan" element= {<PlanResultPage/>} />
-        <Route path='saved' element={<SavedPlansPage/>}> </Route>
+        <Route path='saved' element={<IsPrivate><SavedPlansPage/></IsPrivate>}> </Route>
         <Route path='signup' element={<SignupPage/>}> </Route>
-        <Route path='/login' element={<LogInPage/>}> </Route>
+        <Route path='login' element={<LogInPage/>}> </Route>
 
 				</Route>
 			</Routes>

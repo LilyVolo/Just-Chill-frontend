@@ -2,12 +2,24 @@ import React from 'react'
 import InfoBlocup from '../components/InfoBlockup'
 import axios from "axios"
 import { useNavigate, useParams } from "react-router-dom"
-import { useEffect, useState } from "react"
+import { useEffect, useState, useRef } from "react"
 const API_URL = 'http://localhost:5005/api'
 import Select from 'react-select';
 import SelectorFormPlaces from '../components/SelectorFormPlaces'
 import "./CityPage.css"
 import { Button} from "../components/Button.jsx"
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+
+
+// import required modules
+import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+
 
 
 function CityPage() {
@@ -96,13 +108,14 @@ function CityPage() {
     } 
   }
 
+
     
     if (!city) {
       return <div className="Loading"> Loading..</div>;
     }
   return (
   <div className='main-city-page-cintainer'>
-        <div className="city-up-container" > 
+        {/* <div className="city-up-container" > 
         <div className="city-container-wrapper">
 
        <div className='img-city-container'> 
@@ -113,10 +126,36 @@ function CityPage() {
               {city.text}
                </p>  </div>
          
-          </div>   
 </div>
+          </div>    */}
 
+<Swiper
+        spaceBetween={30}
+        centeredSlides={true}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
+        pagination={{
+          clickable: true,
+        }}
+        navigation={true}
+        modules={[Autoplay, Pagination, Navigation]}
+        className="mySwiper"
+      >
+        <SwiperSlide><img className="img_places" src={`../public/1.jpg`} alt="" /></SwiperSlide>
+        <SwiperSlide>Slide 2</SwiperSlide>
+        <SwiperSlide>Slide 3</SwiperSlide>
+        <SwiperSlide>Slide 4</SwiperSlide>
+        <SwiperSlide>Slide 5</SwiperSlide>
+        <SwiperSlide>Slide 6</SwiperSlide>
+        <SwiperSlide>Slide 7</SwiperSlide>
+        <SwiperSlide>Slide 8</SwiperSlide>
+        <SwiperSlide>Slide 9</SwiperSlide>
+      </Swiper>
+         
 <div className='form-container'>
+
 <form action="" onSubmit={handleSubmit} className='form-wrapper'>
 
     <div className='firs-block block'>
@@ -159,7 +198,7 @@ function CityPage() {
         <img className='paris4 img_places' src={`../public/paris/${city.img4}`} alt="" />
         </div>
        
-     <button>
+     <button className='button'>
       Submit
      </button>
         {/* <Button

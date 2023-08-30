@@ -42,7 +42,7 @@ function Navbar() {
           <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
            Just chill <GiClover/>
 </Link>
-</div>
+
 <div className='menu-icon' onClick={handleClick}>
    {click? <ImCross/> :<GiHamburgerMenu/> }
 </div>
@@ -64,8 +64,8 @@ function Navbar() {
     <Link to='/saved'  className="nav-links" onClick={closeMobileMenu}> 
    Saved Plans </Link>
   </li>
-  <button onClick={logOutUser}>Logout</button>
-          {/* <span>{user && user.name}</span> */}
+
+ 
         </>
       )}
 
@@ -80,7 +80,19 @@ function Navbar() {
 
   
  </ul>
- {button && <Button buttonStyle='btn--outline'>Sign up</Button>}
+ </div>
+ { !isLoggedIn && button && <Button buttonStyle='btn--outline'>Sign up</Button>}
+ 
+ {isLoggedIn && (
+    <>
+
+  <div className='btn-contn'>
+  <Button onClick={logOutUser} buttonStyle='btn--outline'>Logout</Button>
+  </div>
+          {/* <span>{user && user.name}</span> */}
+        </>
+      )}
+
       </nav>
       </>
   )

@@ -1,5 +1,5 @@
 import React from 'react';
-import './Cards.css';
+import './cards.css';
 const API_URL = 'http://localhost:5005/api/'
 import CardItem from './CardItem';
 import { useState, useEffect } from "react";

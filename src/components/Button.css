@@ -9,7 +9,10 @@
     border: none;
     cursor: pointer;
 }
-
+.btn-contn{
+width: 3rem;
+margin-top: 1.5rem;
+}
 .btn-primary {
     background-color: var(--primary);
     color: #242424;
