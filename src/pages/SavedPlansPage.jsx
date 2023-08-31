@@ -1,5 +1,4 @@
-import React, {useState, useEffect} from 'react'
-import axios from "axios"
+import  {useState, useEffect} from 'react'
 import service from '../service/service';
 import './SavedPlansPage.css'
 // import Note from "../components/Note";
@@ -42,16 +41,21 @@ console.log(plans)
           return (
             <div key={plan._id} className="each-card">
               <div className="plan-note-card">
+                <h2>{plan.city.name}</h2>
                 <img
-                  className="fplan-details"
-                  src=''
+                  className="plan-img"
+                  src={`../public/paris/${plan.city.img1}`}
                   alt=""
                 />
-              </div>
-              <div> 
-                <h2>{plan.city.name}</h2>
                 <h2>тут будет текст</h2>
+                <p></p>
+                <p>We propose you to visit {plan.places[0].name} to make yor body relaxed:</p>
+    <p> rating of the place: {plan.places[0].rating} </p>
+    <p>adress: {plan.places[0].formatted_address}</p>
+               
               </div>
+              <div className='note-container'> 
+              <div className='note-container-wrapper'> 
                <Note
                 shouldFetch={shouldFetch}
                 setShouldFetch={setShouldFetch}
@@ -64,6 +68,8 @@ console.log(plans)
                 planId={plan._id}
                 userId={plan.user} // Исправлено plan.id на _id
               /> 
+              </div>
+                   </div>
             </div>
           );
         })}

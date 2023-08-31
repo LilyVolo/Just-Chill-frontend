@@ -2,9 +2,19 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'PT Sans', sans-serif;
+    /* font-family: 'PT Sans', sans-serif; */
   }
   
+  body {
+    /* font-family: 'Playfair Display SC', sans-serif;
+    font-family: 'Playfair Display Variable', sans-serif; */
+    font-family: 'Manrope Variable', sans-serif;
+  }
+
+  h2 {
+    font-weight: 400;
+  }
+
   .home,
   .services,
   .products,

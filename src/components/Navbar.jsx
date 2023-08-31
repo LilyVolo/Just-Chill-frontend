@@ -40,7 +40,7 @@ function Navbar() {
       <nav className='navbar'>
         <div className='navbar-container'>
           <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
-           Just chill <GiClover/>
+           Just chill <GiClover className='logo-svg'/>
 </Link>
 
 <div className='menu-icon' onClick={handleClick}>
@@ -81,13 +81,13 @@ function Navbar() {
   
  </ul>
  </div>
- { !isLoggedIn && button && <Button buttonStyle='btn--outline'>Sign up</Button>}
+ { !isLoggedIn && button && <Button way={'/signup'}  buttonStyle='btn--outline'>Sign up</Button>}
  
  {isLoggedIn && (
     <>
 
   <div className='btn-contn'>
-  <Button onClick={logOutUser} buttonStyle='btn--outline'>Logout</Button>
+ { button &&<Button onClick={logOutUser} buttonStyle='btn--outline'>Logout</Button>}
   </div>
           {/* <span>{user && user.name}</span> */}
         </>

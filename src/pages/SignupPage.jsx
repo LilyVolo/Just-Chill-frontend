@@ -70,7 +70,7 @@ function SignupPage() {
             onChange={handleName}
           />
    
-          <button className='formElements' type="submit">Sign Up</button>
+          <button className='formElements button' type="submit">Sign Up</button>
         </form>
    
         { errorMessage && <p className="error-message">{errorMessage}</p> }

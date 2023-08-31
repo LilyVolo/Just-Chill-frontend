@@ -55,29 +55,29 @@ function CityPage() {
 
     async function fetchRestaurant(selectedOption3, selectedOption4 ) {
       const apiUrl    = '/gapi/maps/api/place/textsearch/json';
-      const cityName  = city.label;
+      const cityName  = city.label; 
       const query     = `restaurant ${selectedOption3} à ${cityName}`;
-
+      
       const restaurant = await axios.get(apiUrl, {
-            params: {
-              query,
-              radius: 10000,
-              maxprice: selectedOption4,
-              key: import.meta.env.VITE_GAPI_KEY
-            }
-          }).catch(error => {
-            console.error('Error fetching data:', error);
-          });
+        params: {
+          query,
+          radius: 10000,
+          maxprice: selectedOption4,
+          key: import.meta.env.VITE_GAPI_KEY
+        }
+      }).catch(error => {
+        console.error('Error fetching data:', error);
+      });
 
 
-      return restaurant.data.results.filter(result => {
-        // Filter based on budget and review criteria
-        const meetsBudgetCriteria = result.price_level && result.price_level <= selectedOption4; // Example: Budget is low to moderate
-        const meetsReviewCriteria = result.rating && result.rating >= 4.0; 
-        return meetsBudgetCriteria && meetsReviewCriteria;
-      })
-  
-    }
+  return restaurant.data.results.filter(result => {
+    // Filter based on budget and review criteria
+    const meetsBudgetCriteria = result.price_level && result.price_level <= selectedOption4; // Example: Budget is low to moderate
+    const meetsReviewCriteria = result.rating && result.rating >= 4.0; 
+    return meetsBudgetCriteria && meetsReviewCriteria;
+  })
+
+}
 
     useEffect(() => {
       fetchTargetCity();
@@ -128,8 +128,13 @@ function CityPage() {
          
 </div>
           </div>    */}
-
+<div className='texxt-container'>
+  <h2>
+    {city.text}
+  </h2>
+</div>
 <Swiper
+      
         spaceBetween={30}
         centeredSlides={true}
         autoplay={{
@@ -155,23 +160,23 @@ function CityPage() {
       
       </Swiper>
          
-<div className='texxt-container'>
-  <h2>
-    {city.text}
-  </h2>
-</div>
+
 
 <div className='form-container'>
 
 <form action="" onSubmit={handleSubmit} className='form-wrapper'>
 
     <div className='firs-block block'>
+      <div>
+        <p className='selector-option'>Choose the type of relaxation</p>
     <SelectorFormPlaces
          name={'massage'}
          options={city.massage.map((el) => {
           return( {value: el, label: el})
         })}
         />
+        </div>
+        
            <img className="img_places" src={`../public/paris/${city.img2}`}  alt="" />
            {console.log(`../public/paris/${city.img2}`)}
     </div>
@@ -179,6 +184,8 @@ function CityPage() {
     <div className='second-block block'>
     <img className="img_places" src={`../public/paris/${city.img3}`} alt="" />
     
+    <div>
+      <p className='selector-option'>Choose a tasting option</p>
     <SelectorFormPlaces
           name={'degustation'}
         options={city.degustation.map((el) => {
@@ -186,9 +193,12 @@ function CityPage() {
         })}
         />
       </div>
-      <div className='third-block block'>
-     
-      
+    </div>
+
+      <div className='third-block block'>   
+<div className='small-box'>
+<p className='selector-option-third'> Indicate what cuisine you prefer and<br/>
+ the budget level for the restaurant</p>
       <SelectorFormPlaces id="selecta"
          name={'budget'}
         options={options4}
@@ -198,23 +208,13 @@ function CityPage() {
          name={'cuisine'}
         options={options3}
         />
-    
-   
-
-        
+</div>
         <img className='paris4 img_places' src={`../public/paris/${city.img4}`} alt="" />
         </div>
        
      <button className='button'>
       Submit
      </button>
-        {/* <Button
-          className='btns'
-          buttonStyle='btn--primary'
-          buttonSize='btn--large'
-        >
-          Submit
-        </Button> */}
       </form>
 
 </div>

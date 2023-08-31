@@ -1,0 +1,84 @@
+.about-us{
+    width:80%;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+
+.city-up-container{
+    display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 100%;
+    margin: 0 auto;
+}
+.city-container-wrapper {
+    display: flex;
+    /* position: relative; */
+    margin: 3rem 0 3rem;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: rgba(12, 12, 13, 0.1);
+  box-shadow: 5px 5px 15px 5px #000000;;
+  border-radius: 20px;
+}
+.img-city-container {
+overflow: hidden;
+width: 45rem;
+border-radius: 10px;
+margin: 1rem;
+}
+.city-first-img{
+width: 40rem;
+border-radius: 10px;
+transition: all 0.2s linear;
+}
+.city-first-img:hover {
+    transform: scale(1.1);
+  }
+.text-up-city{
+text-align: center;
+width: 100%;
+position: relative;
+}
+.about-us section {
+    margin-left: 1rem;
+}
+.intro {
+    text-align: center;
+}
+.intro h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.intro p {
+  font-size: 18px;
+  color: #777;
+}
+
+.vision h2,
+.journey h2,
+.commitment h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+@media (max-width: 990px) {
+    .about-us{
+      width: 90%;
+    }
+
+    text-up-city {
+        width: 30rem;
+    } 
+    .city-container-wrapper{
+        flex-direction: column;
+    }
+    .img-city-container { 
+        width: 90%;
+        height: 70%;
+    }
+  }

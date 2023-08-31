@@ -2,10 +2,96 @@
     display: flex;
     align-items:start;
     justify-content: left;
-    background-color: aquamarine;
+  
 }
 .each-card{
     background-color: bisque;
-    width:20rem;
+    width:30rem;
     margin: 2rem;
+    height: 100vh;
+    display: flex;
+    padding: 1em;
+}
+.note,
+.note-new,
+textarea {
+  
+  object-fit: cover;
+  border-radius: 1rem;
+  background-color: #1f98f4;;
+  margin-bottom: 0.8rem;
+  border-radius: 1rem;
+  padding: 1rem;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.note-new{
+    margin-bottom: 0;
+}
+
+.textarea-notes {
+  width: 85%
+}
+.note-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.fave-list {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat (auto-fit, minmax(250, 1fr));
+}
+
+.notes-list {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat (auto-fit, minmax(250, 1fr));
+}
+/* .note-new {
+  background-color: rgb(194, 232, 194)
+} */
+
+textarea {
+  border: none;
+  resize: none;
+  background-color: rgb(194, 232, 194);
+}
+textarea:focus {
+  outline: none;
+}
+.save,
+.edit-btn {
+  background-color: antiquewhite;
+  border: none;
+  border-radius: 15px;
+  padding: 5px 10px 5px 10px;
+}
+.save:hover {
+  background-color: bisque;
+  cursor: pointer;
+}
+.searchIcon {
+  font-size: 1.5rem;
+  color: rgb(160, 198, 158);
+}
+
+.plan-img{
+    width: 7rem
+}
+.note-container{
+    align-self: flex-end;
+}
+.plan-note-card {
+    width: 15rem;
+    align-content: end;
+justify-content: end;
+background-color:  rgba(12, 12, 13, 0.2);
+}
+.note-container-wrapper{
+width: 100%;
 }

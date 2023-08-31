@@ -54,19 +54,19 @@ function Cards() {
               src='1.jpg'
               text='Taste delicious teas in a traditional setting'
               label='tea ceremony'
-              path='/services'
+              path='/aboutus'
             />
             <CardItem
               src='2.jpg'
               text='Take a relaxing aroma or scandinavian bath.'
               label='aroma bath'
-              path='/products'
+              path='/aboutus'
             />
             <CardItem
               src='3.jpg'
               text='Experience different types of massage'
               label='massage'
-              path='/sign-up'
+              path='/aboutus'
             />
           </ul>
         </div>
