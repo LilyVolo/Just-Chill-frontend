@@ -1,13 +1,12 @@
 import React from 'react'
-import InfoBlocup from '../components/InfoBlockup'
 import axios from "axios"
+import service from '../service/service'
 import { useNavigate, useParams } from "react-router-dom"
 import { useEffect, useState, useRef } from "react"
-const API_URL = import.meta.env.VITE_API_URL;
 import Select from 'react-select';
 import SelectorFormPlaces from '../components/SelectorFormPlaces'
 import "./CityPage.css"
-import { Button} from "../components/Button.jsx"
+
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -46,7 +45,8 @@ function CityPage() {
 
     async function fetchTargetCity() {
     try {
-      const response = await axios.get(`${API_URL}/cities/${id}`);
+      const response = await service.get(`/cities/${id}`);
+     
       setCity(response.data);
     } catch (error) {
       console.log(error);
@@ -96,7 +96,7 @@ function CityPage() {
       
     
       try {
-      const response = await axios.get(`${API_URL}/cities/${id}/places?option1=${selectedOption}&option2=${selectedOption2}`);
+      const response = await  service.get(`/cities/${id}/places?option1=${selectedOption}&option2=${selectedOption2}`);
       setPlan(response.data)  
       const restaurant =  await fetchRestaurant(selectedOption3, selectedOption4)
       let allplanData = {infos: response.data, restaurants: restaurant || [], city: id}
@@ -115,24 +115,16 @@ function CityPage() {
     }
   return (
   <div className='main-city-page-cintainer'>
-        {/* <div className="city-up-container" > 
-        <div className="city-container-wrapper">
-
-       <div className='img-city-container'> 
-          <img  className="city-first-img" src={`/paris/${city.img1}`} alt="" />
-       </div>
-
-          <div className='text-up-city'> <p>
-              {city.text}
-               </p>  </div>
-         
-</div>
-          </div>    */}
+    <div className='top-box'>
+    <img src="../public/UrB3.gif" alt="" />
 <div className='texxt-container'>
+
   <h2>
     {city.text}
   </h2>
 </div>
+      </div>
+      <div className="triangle"></div>
 <Swiper
       
         spaceBetween={30}
@@ -153,7 +145,7 @@ function CityPage() {
             console.log(el)
             return (
        
-              <SwiperSlide key={el}><img className="img_places" src={'../public/paris/'+el} alt="" /></SwiperSlide>
+              <SwiperSlide key={el}><img className="img_places" src={'/paris/'+el} alt="" /></SwiperSlide>
             )
           })
         }
@@ -177,8 +169,8 @@ function CityPage() {
         />
         </div>
         
-           <img className="img_places" src={`../public/paris/${city.img2}`}  alt="" />
-           {console.log(`../public/paris/${city.img2}`)}
+           <img className="img_places" src={`${city.img2}`}  alt="" />
+           {console.log(`/paris/${city.img2}`)}
     </div>
 
     <div className='second-block block'>

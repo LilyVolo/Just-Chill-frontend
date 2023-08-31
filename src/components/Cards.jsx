@@ -4,12 +4,15 @@ const API_URL = import.meta.env.VITE_API_URL;
 import CardItem from './CardItem';
 import { useState, useEffect } from "react";
 import axios from "axios";
+import service from '../service/service'
+
 
 function Cards() {
   const [cities, setCities] = useState([]);
   async function fetchAllCities() {
     try {
-      const response = await axios.get(`${API_URL}/cities`);
+      const response = await service.get(`/cities`);
+      console.log(response)
 
 		
       setCities(response.data);

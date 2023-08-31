@@ -2,15 +2,19 @@
     display: flex;
     align-items:start;
     justify-content: left;
+    flex-wrap: wrap;
+    justify-content: center;
   
 }
 .each-card{
-    background-color: bisque;
     width:30rem;
-    margin: 2rem;
-    height: 100vh;
+    height: 120vh;
     display: flex;
-    padding: 1em;
+    background-color: rgba(12, 12, 13, 0.2);
+  margin: 3rem;
+  box-shadow: 5px 5px 15px 5px #000000;;
+  border-radius: 20px;
+
 }
 .note,
 .note-new,
@@ -18,7 +22,7 @@ textarea {
   
   object-fit: cover;
   border-radius: 1rem;
-  background-color: #1f98f4;;
+  background-color: #71777a;;
   margin-bottom: 0.8rem;
   border-radius: 1rem;
   padding: 1rem;
@@ -59,7 +63,7 @@ textarea {
 textarea {
   border: none;
   resize: none;
-  background-color: rgb(194, 232, 194);
+  background-color: rgb(249, 249, 249);
 }
 textarea:focus {
   outline: none;
@@ -81,16 +85,22 @@ textarea:focus {
 }
 
 .plan-img{
-    width: 7rem
+    width: 7rem;
+    margin: 1rem;
 }
 .note-container{
     align-self: flex-end;
 }
 .plan-note-card {
+  display: flex;
+  padding: 1rem;
+  flex-direction: column;
     width: 15rem;
-    align-content: end;
-justify-content: end;
+    align-content: center;
+    text-align: center;
+justify-content: start;
 background-color:  rgba(12, 12, 13, 0.2);
+
 }
 .note-container-wrapper{
 width: 100%;

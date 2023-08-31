@@ -1,6 +1,7 @@
 
 .result-text{
 font-size: 2rem;
+margin: 1rem;
 }
 
 .container-container-plan-page{
@@ -55,8 +56,8 @@ margin: 4rem;
   }
 
   .button {
-    width: 10rem;
-    display: inline-block;
+    width: 13rem;
+    display: block;
     padding: 12px 24px;
     font-size: 16px;
     border: none;

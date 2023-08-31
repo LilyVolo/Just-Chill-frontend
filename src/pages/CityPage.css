@@ -10,9 +10,11 @@ overflow: hidden;
 
 .texxt-container{
     width: 80%;
-    margin: 1rem;
+    margin-top: 6rem;
     text-align: center;
     font-size: 1rem;
+    background-color: rgb(90, 189, 189, 0.25);
+    border-radius: 20px;
 }
 .form-container{
     display: flex;
@@ -132,6 +134,21 @@ background-color: rgba(12, 12, 13, 0.2);
     margin-left: 4rem;
     text-align: left;
 }
+.top-box{
+    width: 100%;
+    display: flex;
+}
+.top-box img{
+width: 10rem;
+}
+.triangle{
+    width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-top: 100px solid  rgb(90, 189, 189, 0.25);
+}
+
 @media (max-width: 1700px) {
     .city-container-wrapper {
     width: 100%;

@@ -12,7 +12,7 @@ function Note({ user, planId, userId, shouldFetch, setShouldFetch }) {
 
   const fetchNotes = async () => {
     try {
-      const response = await service.get(`plans/savedplans/notes/${planId}`
+      const response = await service.get(`/plans/savedplans/notes/${planId}`
       );
     
       setNotes(response.data);
