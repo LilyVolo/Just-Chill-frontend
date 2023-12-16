@@ -5,7 +5,6 @@ export default async function handler(request, response) {
   const key       = process.env.VITE_GAPI_KEY;
 
   console.log('query',request.query)
-  console.log('body',request.body)
 
   if(!request.query) {
     return response.status(400).json({
@@ -16,7 +15,6 @@ export default async function handler(request, response) {
   return await axios.get(apiUrl, {
     params: {...request.query, key: key}
   }).then(res => {
-    console.log('res',res)
     response.status(200).json({
       body: res,
     });
