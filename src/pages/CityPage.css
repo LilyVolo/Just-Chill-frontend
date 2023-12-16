@@ -135,8 +135,9 @@ background-color: rgba(12, 12, 13, 0.2);
     text-align: left;
 }
 .top-box{
-    width: 100%;
+    width: 90%;
     display: flex;
+    margin-left: 17rem;
 }
 .top-box img{
 width: 10rem;

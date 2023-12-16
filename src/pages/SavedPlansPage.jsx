@@ -66,9 +66,9 @@ console.log(plans)
                </div>
               <div>
               <img src="" alt="" />
-                <p>We propose you to visit {plan.restaurants[0].name} to make yor body relaxed:</p>
-    <p> rating of the place: {plan.restaurants[0].rating} </p>
-    <p>adress: {plan.restaurants[0].formatted_address}</p>
+                <p>We propose you to visit {plan.restaurants[0][0].name} to make yor body relaxed:</p>
+    <p> rating of the place: {plan.restaurants[0][0].rating} </p>
+    <p>adress: {plan.restaurants[0][0].formatted_address}</p>
               </div>
               </div>
               <div className='note-container'> 

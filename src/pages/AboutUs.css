@@ -78,6 +78,15 @@ position: relative;
     } 
     .city-container-wrapper{
         flex-direction: column;
+        margin:0;
+        padding: 0;
+    }
+    .city-up-container {
+      width: 80%;
+    }
+    .about-us{
+      width:100%;
+      margin-right: 2rem;
     }
     .img-city-container { 
         width: 90%;

@@ -55,7 +55,7 @@ function PlanResultPage() {
   </div>
 
   
-  <button className='button' onClick={handleClick}> 
+  <button className='button-result' onClick={handleClick}> 
     save your plan
   </button> 
 

@@ -9,6 +9,7 @@ import service from '../service/service'
 
 function Cards() {
   const [cities, setCities] = useState([]);
+  
   async function fetchAllCities() {
     try {
       const response = await service.get(`/cities`);

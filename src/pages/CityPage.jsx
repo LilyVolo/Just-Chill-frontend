@@ -115,16 +115,8 @@ function CityPage() {
     }
   return (
   <div className='main-city-page-cintainer'>
-    <div className='top-box'>
-    <img src="../public/UrB3.gif" alt="" />
-<div className='texxt-container'>
-
-  <h2>
-    {city.text}
-  </h2>
-</div>
-      </div>
-      <div className="triangle"></div>
+   
+   
 <Swiper
       
         spaceBetween={30}
@@ -153,7 +145,16 @@ function CityPage() {
       </Swiper>
          
 
+      <div className='top-box'>
+    {/* <img src="../public/UrB3.gif" alt="" /> */}
+<div className='texxt-container'>
 
+  <h2>
+    {city.text}
+  </h2>
+</div>
+      </div>
+      <div className="triangle"></div>
 <div className='form-container'>
 
 <form action="" onSubmit={handleSubmit} className='form-wrapper'>
@@ -169,8 +170,8 @@ function CityPage() {
         />
         </div>
         
-           <img className="img_places" src={`${city.img2}`}  alt="" />
-           {console.log(`/paris/${city.img2}`)}
+           <img className="img_places" src={`../public/paris/${city.img2}`}  alt="" />
+
     </div>
 
     <div className='second-block block'>
