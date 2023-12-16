@@ -6,14 +6,14 @@ export default async function handler(request, response) {
 
   console.log(request)
 
-  if(!request.body.query) {
+  if(!request.query) {
     return response.status(400).json({
       body: 'Error invalid request'
     })
   }
 
   return axios.get(apiUrl, {
-    params: {...request.body, key: key}
+    params: {...request.query, key: key}
   }).then(res => {
     response.status(200).json({
       body: res,
