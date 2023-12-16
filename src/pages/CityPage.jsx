@@ -54,7 +54,7 @@ function CityPage() {
     
 
     async function fetchRestaurant(selectedOption3, selectedOption4 ) {
-      const apiUrl    = import.meta.env.VITE_GAPI_URL + '/maps/api/place/textsearch/json';
+      const apiUrl    =  'api/'; //import.meta.env.VITE_GAPI_URL
       const cityName  = city.label; 
       const query     = `restaurant ${selectedOption3} à ${cityName}`;
       
@@ -63,7 +63,6 @@ function CityPage() {
           query,
           radius: 10000,
           maxprice: selectedOption4,
-          key: import.meta.env.VITE_GAPI_KEY
         }
       }).catch(error => {
         console.error('Error fetching data:', error);
