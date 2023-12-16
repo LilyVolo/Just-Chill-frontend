@@ -4,7 +4,7 @@ export default async function handler(request, response) {
   const apiUrl    = 'https://maps.googleapis.com/maps/api/place/textsearch/json';
   const key       = process.env.VITE_GAPI_KEY;
 
-  console.log(request.body)
+  console.log(request)
 
   if(!request.body.query) {
     return response.status(400).json({
