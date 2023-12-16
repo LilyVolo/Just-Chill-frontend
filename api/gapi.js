@@ -13,7 +13,7 @@ export default async function handler(request, response) {
     })
   }
 
-  return axios.get(apiUrl, {
+  return await axios.get(apiUrl, {
     params: {...request.query, key: key}
   }).then(res => {
     console.log('res',res)
