@@ -54,7 +54,7 @@ function CityPage() {
     
 
     async function fetchRestaurant(selectedOption3, selectedOption4 ) {
-      const apiUrl    = '/gapi/maps/api/place/textsearch/json';
+      const apiUrl    = import.meta.env.VITE_GAPI_URL + '/maps/api/place/textsearch/json';
       const cityName  = city.label; 
       const query     = `restaurant ${selectedOption3} à ${cityName}`;
       
