@@ -54,7 +54,7 @@ function CityPage() {
     
 
     async function fetchRestaurant(selectedOption3, selectedOption4 ) {
-      const apiUrl    =  'api/gapi'; //import.meta.env.VITE_GAPI_URL
+      const apiUrl    =  import.meta.env.VITE_GAPI_URL;
       const cityName  = city.label; 
       const query     = `restaurant ${selectedOption3} à ${cityName}`;
       
@@ -68,13 +68,13 @@ function CityPage() {
         console.error('Error fetching data:', error);
       });
 
-
-  return restaurant.data.results.filter(result => {
-    // Filter based on budget and review criteria
-    const meetsBudgetCriteria = result.price_level && result.price_level <= selectedOption4; // Example: Budget is low to moderate
-    const meetsReviewCriteria = result.rating && result.rating >= 4.0; 
-    return meetsBudgetCriteria && meetsReviewCriteria;
-  })
+      console.log(restaurant)
+      return restaurant.data.results.filter(result => {
+        // Filter based on budget and review criteria
+        const meetsBudgetCriteria = result.price_level && result.price_level <= selectedOption4; // Example: Budget is low to moderate
+        const meetsReviewCriteria = result.rating && result.rating >= 4.0; 
+        return meetsBudgetCriteria && meetsReviewCriteria;
+      })
 
 }
 
