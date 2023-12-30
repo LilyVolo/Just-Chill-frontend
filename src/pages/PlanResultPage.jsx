@@ -29,14 +29,14 @@ function PlanResultPage() {
   <div  className='wrapper-container-plan-page'>
 
   <div className='plan-block'>
-  <img className='img' src="/place.jpg" alt="" />
+   <img  src="/place.jpg" alt="" /> 
 
     <p>We propose you to visit {data.infos[0][0].name} to make yor body relaxed:</p>
     <p> rating of the place: {data.infos[0][0].rating} </p>
     <p>adress: {data.infos[0][0].formatted_address}</p>
     <p>We will book it for you, and propose extra options</p>
   </div>
- <div  className='plan-block'>
+  <div  className='plan-block'>
   <img src={`../public/${data.infos[1][0].img}`} alt="" />
     <p>According to your choise we recomende you {data.infos[1][0].name}</p>
     <p> rating of the place: {data.infos[1][0].rating} </p>
@@ -46,12 +46,12 @@ function PlanResultPage() {
   <div  className='plan-block'>
   <img src='../public/restaurant.jpg' alt="" />
     <p>We propose you this restaurant for a perfect dinner</p>
-    <p>{data.restaurants[0].name}</p>
-    <p> rating of the place: {data.restaurants[0].rating} </p>
-    <p>adress: {data.restaurants[0].formatted_address}</p>
+     <p>{data.infos[2][0].name}</p>
+    {/* <p> rating of the place: {data.restaurants[0].rating} </p>
+    <p>adress: {data.restaurants[0].formatted_address}</p>  */}
    
     <p>Dinner will be served immediately after your arrival</p>
-  </div>
+  </div> 
   </div>
 
   
