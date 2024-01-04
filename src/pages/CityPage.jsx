@@ -98,7 +98,7 @@ function CityPage() {
       setPlan(response.data)  
       // const restaurant =  await fetchRestaurant(selectedOption3, selectedOption4)
       let allplanData = {infos: response.data, city: id}
-      console.log(allplanData)
+  
       navigate('/plan', {state: allplanData})
 
     }
@@ -131,8 +131,6 @@ function CityPage() {
       >
         {
           city.slimg.map((el) => {
-            console.log(el)
-            console.log(city.name)
             return (
        
               <SwiperSlide key={el}><img className="img_places" src={`../public/${city.name}/${el}`} alt="" /></SwiperSlide>
