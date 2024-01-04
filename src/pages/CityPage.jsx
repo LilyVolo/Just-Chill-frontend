@@ -133,7 +133,7 @@ function CityPage() {
           city.slimg.map((el) => {
             return (
        
-              <SwiperSlide key={el}><img className="img_places" src={`../public/${city.name}/${el}`} alt="" /></SwiperSlide>
+              <SwiperSlide key={el}><img className="img_places" src={`${city.name}/${el}`} alt="" /></SwiperSlide>
               // {`../public/${city.img2}`}
             )
           })
@@ -167,12 +167,12 @@ function CityPage() {
         />
         </div>
         
-           <img className="img_places" src={`../public/${city.img2}`}  alt="" />
+           <img className="img_places" src={city.img2}  alt="" />
 
     </div>
 
     <div className='second-block block'>
-    <img className="img_places" src={`../public/${city.img3}`} alt="" />
+    <img className="img_places" src={city.img3} alt="" />
     
     <div>
       <p className='selector-option'>Choose a tasting option</p>
@@ -201,7 +201,7 @@ function CityPage() {
         // options={options3}
         />
 </div>
-        <img className='paris4 img_places' src={`../public/${city.img4}`} alt="" />
+        <img className='paris4 img_places' src={city.img4} alt="" />
         </div>
        
      <button className='button'>
