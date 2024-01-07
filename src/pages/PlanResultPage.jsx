@@ -11,7 +11,7 @@ function PlanResultPage() {
  
 
    function handleClick () {
-    service.post(`savedplans`, {city: data.city, restaurants: data.restaurants,
+    service.post(`plans/savedplans`, {city: data.city, restaurants: data.restaurants,
       places: [data.infos[0][0], data.infos[1][0]], 
     }).then(() => {
       navigate('/saved')
