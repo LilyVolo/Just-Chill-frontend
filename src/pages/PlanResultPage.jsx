@@ -8,8 +8,6 @@ function PlanResultPage() {
     const data = location.state;
     
     const navigate =  useNavigate()
- 
-    console.log(data)
 
    function handleClick () {
     service.post(`plans/savedplans`, {city: data.city, restaurants: data.restaurants,
@@ -29,7 +27,7 @@ function PlanResultPage() {
   <div  className='wrapper-container-plan-page'>
 
   <div className='plan-block'>
-   <img  src="place.jpg" alt="" /> 
+   {/* <img  src="place.jpg" alt="" />  */}
 
     <p>We propose you to visit <br/> {data.infos[0][0].name} to make yor body relaxed:</p> 
     <p> rating of the place: {data.infos[0][0].rating} </p>
@@ -37,14 +35,14 @@ function PlanResultPage() {
     <p>We will book it for you, and propose extra options</p>
   </div>
   <div  className='plan-block'>
-  <img src={`${data.infos[1][0].img}`} alt="" />
+  {/* <img src={`${data.infos[1][0].img}`} alt="" /> */}
     <p>According to your choise we recomende you <br/> {data.infos[1][0].name}</p> 
     <p> rating of the place: {data.infos[1][0].rating} </p>
     <p>adress: {data.infos[1][0].formatted_address}</p>
     <p>We will organise transfer, and degustation will be prepeared acoording to our planing</p>
   </div>
   <div  className='plan-block'>
-  <img src='restaurant.jpg' alt="" />
+  {/* <img src='restaurant.jpg' alt="" /> */}
     <p>We propose you this restaurant for a perfect dinner</p> <br/>
      <p>{data.infos[2][0].name}</p>
      <p>adress: {data.infos[2][0].formatted_address}</p>
