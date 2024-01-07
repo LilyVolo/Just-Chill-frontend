@@ -87,7 +87,7 @@ function CityPage() {
 				`/cities/${id}/places?option1=${selectedOption}&option2=${selectedOption2}&option3=${selectedOption3}`
 			);
 			setPlan(response.data);
-			console.log(response.data);
+			console.log(response.data, "07/07");
 			// const restaurant =  await fetchRestaurant(selectedOption3, selectedOption4)
 			let allplanData = { infos: response.data, city: id };
 

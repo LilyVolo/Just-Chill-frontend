@@ -56,9 +56,9 @@ function PlanResultPage() {
 				<div className="plan-block">
 					<img src="restaurant.jpg" alt="" />
 					<p>We propose you this restaurant for a perfect dinner</p> <br />
-					<p>{data.infos[0][0].name}</p>
-					<p>address: {data.infos[0][0].formatted_address}</p>
-					<p> rating of the place: {data.infos[0][0].rating} </p>
+					<p>{data.infos[2][0].name}</p>
+					<p>address: {data.infos[2][0].formatted_address}</p>
+					<p> rating of the place: {data.infos[2][0].rating} </p>
 					<p>Dinner will be served immediately after your arrival</p>
 				</div>
 			</div>
