@@ -6,6 +6,8 @@ function PlanResultPage() {
 	const location = useLocation();
 	const data = location.state;
 
+	console.log(data);
+
 	const navigate = useNavigate();
 
 	function handleClick() {
