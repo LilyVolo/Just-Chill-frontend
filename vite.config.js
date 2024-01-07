@@ -12,11 +12,11 @@ export default defineConfig({
       //   changeOrigin: true,
       //   rewrite: (path) => path.replace(/^\/gapi/, ''), // Remove "/gapi" prefix
       // },
-      // '/api': {
-      //   target: 'http://localhost:5005/api',
-      //   changeOrigin: true,
-      //   rewrite: (path) => path.replace(/^\/api/, ''), // Remove "/gapi" prefix
-      // },
+      '/api': {
+        target: 'http://localhost:5005/api',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, ''), // Remove "/gapi" prefix
+      },
     },
   },
 })

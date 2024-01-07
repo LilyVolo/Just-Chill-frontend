@@ -9,6 +9,7 @@ function PlanResultPage() {
     
     const navigate =  useNavigate()
  
+    console.log(data)
 
    function handleClick () {
     service.post(`plans/savedplans`, {city: data.city, restaurants: data.restaurants,
